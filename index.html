@@ -12,7 +12,11 @@
 <style>
 * { margin:0; padding:0; box-sizing:border-box; scroll-behavior:smooth; }
 
-html, body { width:100%; overflow-x:hidden; }
+html, body {
+  width:100%;
+  height:100%;
+  overflow-x:hidden;
+}
 
 body { font-family:'Lato',sans-serif; background:#080808; color:white; }
 
@@ -32,34 +36,48 @@ nav a {
 }
 nav a:hover { color:#f0d580; }
 
-/* HERO — solo la foto, pantalla completa */
+/* HERO — solo la foto, pantalla completa real (sin recuadro, sin corte en móvil) */
 .hero {
   width:100vw;
   height:100vh;
+  height:100dvh;           /* corrige el corte en móvil por la barra del navegador */
   background-color:#0a0a0a;
   background-image: url('images/jose-leal.png');
   background-repeat:no-repeat;
   background-position: center center;
   background-size: cover;
   position:relative;
+  margin:0;
 }
 
 @media(max-width:900px) {
   .hero { background-position: 68% center; }
-  nav a { font-size:1rem; margin:0 10px; letter-spacing:1.5px; }
 }
 
-/* Resto igual */
+/* Resto */
 section { max-width:1100px; margin:auto; padding:70px 25px; }
-h2 { font-family:'Playfair Display',serif; color:#d4af37; font-size:2.8rem; text-align:center; margin-bottom:35px; }
+
+/* Títulos de sección — misma tipografía y estilo que el menú, para uniformidad total */
+h2 {
+  font-family:'Cormorant Garamond', serif;
+  font-weight:600;
+  color:#d4af37;
+  font-size:2.6rem;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  text-align:center;
+  margin-bottom:35px;
+}
+
 .card { background:#151515; padding:30px; border-radius:20px; box-shadow:0 10px 30px #000; line-height:1.8; font-size:1.1rem; }
 .gallery { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
 .gallery img { width:100%; border-radius:20px; box-shadow:0 10px 30px #000; }
 .social { text-align:center; }
 .social a { display:inline-flex; align-items:center; justify-content:center; width:60px; height:60px; margin:10px; border-radius:50%; font-size:30px; text-decoration:none; color:white; transition:.3s; }
 .social a:hover { transform:scale(1.15); }
-.facebook{background:#1877f2;} .tiktok{background:#000;} .youtube{background:#ff0000;} .threads{background:#000;} .whatsapp{background:#25d366;}
-  .instagram{background:radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);}
+.facebook{background:#1877f2;}
+.instagram{background:radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);}
+.tiktok{background:#000;} .youtube{background:#ff0000;} .threads{background:#000;} .whatsapp{background:#25d366;}
 footer { background:#000; text-align:center; padding:30px; }
 </style>
 </head>
@@ -95,7 +113,7 @@ Su propósito es conectar con el público llevando el sentimiento de la música 
 <h2>Contacto</h2>
 <div class="social">
 <a class="facebook" href="https://www.facebook.com/share/1KTsE6QQYY/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-  <a class="instagram" href="https://www.instagram.com/josecantante_27?igsh=MWh1bGZycWhkY2NyZg==" target="_blank"><i class="fab fa-instagram"></i></a>
+<a class="instagram" href="https://www.instagram.com/josecantante_27?igsh=MWh1bGZycWhkY2NyZg==" target="_blank"><i class="fab fa-instagram"></i></a>
 <a class="tiktok" href="https://www.tiktok.com/@joseluisleal5" target="_blank"><i class="fab fa-tiktok"></i></a>
 <a class="youtube" href="https://youtube.com/@joseluiscantante8427" target="_blank"><i class="fab fa-youtube"></i></a>
 <a class="threads" href="https://www.threads.com/@josecantante_27" target="_blank"><i class="fa-brands fa-threads"></i></a>
