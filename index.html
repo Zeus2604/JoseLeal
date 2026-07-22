@@ -32,15 +32,17 @@ nav a {
 }
 nav a:hover { color:#f0d580; }
 
-/* HERO — foto centrada, pantalla completa */
+/* HERO — anulamos explícitamente el max-width/padding/margin que hereda de "section" */
 .hero {
-  width:100vw;
+  width:100%;
+  max-width:none;
+  margin:0;
+  padding:0;
   height:100vh;
   height:100dvh;
   position:relative;
   overflow:hidden;
   background:#0a0a0a;
-  margin:0;
 }
 
 .hero-photo {
@@ -67,7 +69,7 @@ h2 {
 
 .card { background:#151515; padding:30px; border-radius:20px; box-shadow:0 10px 30px #000; line-height:1.8; font-size:1.1rem; }
 
-/* Sección Canciones — reemplaza a Galería */
+/* Sección Canciones */
 .canciones {
   text-align:center;
 }
