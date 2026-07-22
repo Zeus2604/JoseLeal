@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -19,10 +19,10 @@ nav {
 }
 nav a { color:#ffd700; margin:0 12px; text-decoration:none; font-weight:bold; }
 
-/* HERO SIMPLE COMO JESSI URIBE */
+/* HERO */
 .hero {
   min-height:100vh;
-  background: linear-gradient(to right, #0a0a0a 40%, #1a0f0a);
+  background: radial-gradient(ellipse at 75% 50%, #1a120a 0%, #0a0a0a 55%, #050505 100%);
   display:flex;
   align-items:center;
   position:relative;
@@ -37,6 +37,21 @@ nav a { color:#ffd700; margin:0 12px; text-decoration:none; font-weight:bold; }
   justify-content:space-between;
   width:100%;
   padding:0 8%;
+  position:relative;
+  z-index:2;
+}
+
+.hero-text { position:relative; z-index:3; }
+
+.hero-kicker {
+  display:block;
+  font-family:'Lato',sans-serif;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  font-size:.95rem;
+  color:#e0b84a;
+  opacity:.85;
+  margin-bottom:18px;
 }
 
 .hero-text h1 {
@@ -47,16 +62,84 @@ nav a { color:#ffd700; margin:0 12px; text-decoration:none; font-weight:bold; }
   line-height:1;
 }
 
-.hero-image img {
-  max-height:95vh;
-  width:auto;
-  filter: drop-shadow(0 30px 60px rgba(0,0,0,0.9));
+.hero-image {
+  position:relative;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  height:95vh;
 }
 
-/* Responsive */
+.hero-glow {
+  position:absolute;
+  width:70%;
+  height:70%;
+  top:15%;
+  left:50%;
+  transform:translateX(-50%);
+  background: radial-gradient(circle, rgba(255,215,0,0.10) 0%, rgba(255,215,0,0) 65%);
+  filter: blur(40px);
+  z-index:1;
+}
+
+.hero-image img {
+  position:relative;
+  z-index:2;
+  max-height:95vh;
+  width:auto;
+  display:block;
+  filter: drop-shadow(0 30px 45px rgba(0,0,0,0.85));
+
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    rgba(0,0,0,1) 85%,
+    rgba(0,0,0,0) 100%
+  ),
+  linear-gradient(
+    to left,
+    rgba(0,0,0,1) 90%,
+    rgba(0,0,0,0) 100%
+  );
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0,0,0,1) 85%,
+    rgba(0,0,0,0) 100%
+  ),
+  linear-gradient(
+    to left,
+    rgba(0,0,0,1) 90%,
+    rgba(0,0,0,0) 100%
+  );
+  mask-composite: intersect;
+}
+
+.hero-image::after {
+  content:"";
+  position:absolute;
+  bottom:2vh;
+  left:50%;
+  transform:translateX(-50%);
+  width:55%;
+  height:40px;
+  background: radial-gradient(ellipse, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0) 70%);
+  z-index:1;
+  filter: blur(6px);
+}
+
+.hero-fade {
+  position:absolute;
+  bottom:0; left:0; width:100%; height:180px;
+  background: linear-gradient(to bottom, rgba(8,8,8,0) 0%, #080808 100%);
+  z-index:3;
+  pointer-events:none;
+}
+
 @media(max-width:900px) {
-  .hero-content { flex-direction:column-reverse; text-align:center; gap:40px; }
+  .hero-content { flex-direction:column-reverse; text-align:center; gap:20px; padding-top:120px; }
   .hero-text h1 { font-size:4rem; }
+  .hero-image { height:60vh; }
+  .hero-glow { width:90%; height:90%; }
 }
 
 /* Resto igual */
@@ -85,12 +168,15 @@ footer { background:#000; text-align:center; padding:30px; }
 <section class="hero" id="inicio">
   <div class="hero-content">
     <div class="hero-text">
+      <span class="hero-kicker">Música Popular</span>
       <h1>José Leal</h1>
     </div>
     <div class="hero-image">
+      <div class="hero-glow"></div>
       <img src="images/jose-leal.png" alt="José Leal">
     </div>
   </div>
+  <div class="hero-fade"></div>
 </section>
 
 <section id="biografia">
