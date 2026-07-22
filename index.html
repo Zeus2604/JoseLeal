@@ -1,1 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>José Leal | Cantante de Música Popular</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    font-family:'Lato',sans-serif;
+    background:#090909;
+    color:white;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    background:
+    linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.85)),
+    url('images/jose-leal.jpg') center/cover no-repeat;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:30px;
+}
+
+.hero h1{
+    font-family:'Playfair Display',serif;
+    font-size:4rem;
+    margin:0;
+    color:#ffd700;
+    text-shadow:0 5px 20px black;
+}
+
+.hero p{
+    font-size:1.5rem;
+    margin-top:15px;
+}
+
+/* MENU */
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:rgba(0,0,0,.8);
+    padding:15px;
+    text-align:center;
+    z-index:10;
+}
+
+nav a{
+    color:#ffd700;
+    text-decoration:none;
+    margin:0 15px;
+    font-weight:bold;
+}
+
+
+/* SECCIONES */
+
+section{
+    max-width:1100px;
+    margin:auto;
+    padding:70px 25px;
+}
+
+h2{
+    font-family:'Playfair Display',serif;
+    color:#ffd700;
+    text-align:center;
+    font-size:2.5rem;
+}
+
+
+/* TARJETAS */
+
+.card{
+    background:#151515;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 10px 30px black;
+    margin-top:30px;
+    line-height:1.7;
+}
+
+
+/* GALERIA */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.gallery img{
+    width:100%;
+    border-radius:15px;
+}
+
+
+/* CONTACTO */
+
+.social{
+    text-align:center;
+}
+
+.social a{
+    display:inline-block;
+    margin:10px;
+    padding:12px 20px;
+    border-radius:8px;
+    background:linear-gradient(45deg,#ffd700,#b8860b);
+    color:black;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:30px;
+    background:#000;
+}
+
+
+/* MOVIL */
+
+@media(max-width:700px){
+
+.hero h1{
+    font-size:2.8rem;
+}
+
+.hero p{
+    font-size:1.1rem;
+}
+
+nav a{
+    margin:5px;
+    font-size:.9rem;
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<nav>
+<a href="#inicio">Inicio</a>
+<a href="#biografia">Biografía</a>
+<a href="#galeria">Galería</a>
+<a href="#contacto">Contacto</a>
+</nav>
+
+
+<div class="hero" id="inicio">
+
+<h1>José Leal</h1>
+
+<p>
+Cantante colombiano de música popular, ranchera y norteña
+</p>
+
+</div>
+
+
+
+<section id="biografia">
+
+<h2>Biografía</h2>
+
+<div class="card">
+
+José Leal es un artista colombiano apasionado por la música popular,
+ranchera y norteña. Su voz y estilo buscan conectar con el público
+a través de canciones llenas de sentimiento y tradición.
+
+</div>
+
+</section>
+
+
+
+<section id="galeria">
+
+<h2>Galería</h2>
+
+<div class="gallery">
+
+<img src="images/jose-leal.jpg" alt="José Leal">
+
+</div>
+
+</section>
+
+
+
+
+<section id="contacto">
+
+<h2>Contrataciones y contacto</h2>
+
+<div class="social">
+
+<a href="https://www.facebook.com/share/1KTsE6QQYY/" target="_blank">
+Facebook
+</a>
+
+<a href="https://www.tiktok.com/@joseluisleal5" target="_blank">
+TikTok
+</a>
+
+<a href="https://youtube.com/@joseluiscantante8427" target="_blank">
+YouTube
+</a>
+
+<a href="https://www.threads.com/@josecantante_27" target="_blank">
+Threads
+</a>
+
+<a href="https://wa.me/573114898336" target="_blank">
+WhatsApp
+</a>
+
+</div>
+
+</section>
+
+
+
+<footer>
+
+© José Leal - Música Popular Colombiana
+
+</footer>
+
+
+</body>
+</html>
