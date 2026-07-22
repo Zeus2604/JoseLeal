@@ -12,11 +12,7 @@
 <style>
 * { margin:0; padding:0; box-sizing:border-box; scroll-behavior:smooth; }
 
-html, body {
-  width:100%;
-  height:100%;
-  overflow-x:hidden;
-}
+html, body { width:100%; height:100%; overflow-x:hidden; }
 
 body { font-family:'Lato',sans-serif; background:#080808; color:white; }
 
@@ -36,28 +32,38 @@ nav a {
 }
 nav a:hover { color:#f0d580; }
 
-/* HERO — solo la foto, pantalla completa real (sin recuadro, sin corte en móvil) */
+/* HERO — imagen real con object-fit, pantalla completa, control preciso de encuadre */
 .hero {
   width:100vw;
   height:100vh;
-  height:100dvh;           /* corrige el corte en móvil por la barra del navegador */
-  background-color:#0a0a0a;
-  background-image: url('images/jose-leal.png');
-  background-repeat:no-repeat;
-  background-position: center center;
-  background-size: cover;
+  height:100dvh;
   position:relative;
+  overflow:hidden;
+  background:#0a0a0a;
   margin:0;
 }
 
+.hero-photo {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position: center center;
+  display:block;
+}
+
+/* Tablet / móvil grande */
 @media(max-width:900px) {
-  .hero { background-position: 68% center; }
+  .hero-photo { object-position: 68% center; }
+}
+
+/* Móvil angosto — mantiene rostro y sombrero siempre visibles */
+@media(max-width:480px) {
+  .hero-photo { object-position: 72% 18%; }
 }
 
 /* Resto */
 section { max-width:1100px; margin:auto; padding:70px 25px; }
 
-/* Títulos de sección — misma tipografía y estilo que el menú, para uniformidad total */
 h2 {
   font-family:'Cormorant Garamond', serif;
   font-weight:600;
@@ -91,7 +97,9 @@ footer { background:#000; text-align:center; padding:30px; }
 <a href="#contacto">Contacto</a>
 </nav>
 
-<section class="hero" id="inicio"></section>
+<section class="hero" id="inicio">
+  <img src="images/jose-leal.png" alt="José Leal" class="hero-photo">
+</section>
 
 <section id="biografia">
 <h2>Biografía</h2>
@@ -105,7 +113,7 @@ Su propósito es conectar con el público llevando el sentimiento de la música 
 <section id="galeria">
 <h2>Galería</h2>
 <div class="gallery">
-<img src="images/jose-leal.png" alt="José Leal">
+<img src="images/leal.png" alt="José Leal">
 </div>
 </section>
 
