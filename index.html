@@ -11,7 +11,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-
 *{
 margin:0;
 padding:0;
@@ -21,12 +20,9 @@ scroll-behavior:smooth;
 
 body{
 font-family:'Lato',sans-serif;
-background:#050505;
+background:#080808;
 color:white;
 }
-
-
-/* MENU */
 
 nav{
 position:fixed;
@@ -40,293 +36,176 @@ z-index:100;
 
 nav a{
 color:#ffd700;
-margin:0 15px;
+margin:0 12px;
 text-decoration:none;
 font-weight:bold;
 }
-
-
-/* PORTADA */
 
 .hero{
-
 height:100vh;
-
 background:
-linear-gradient(
-rgba(0,0,0,.75),
-rgba(0,0,0,.9)
-),
-url('images/Jose-leal.jpg');
-
-background-size:cover;
-background-position:center;
-
+linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.9)),
+url('images/Jose-leal.jpg') center/cover no-repeat;
 display:flex;
-justify-content:center;
 align-items:center;
+justify-content:center;
 text-align:center;
 padding:20px;
-
 }
-
 
 .hero h1{
-
 font-family:'Playfair Display',serif;
-font-size:5rem;
+font-size:4.5rem;
 color:#ffd700;
-text-shadow:0 0 25px black;
-
+text-shadow:0 5px 20px #000;
 }
-
 
 .hero p{
-
-font-size:1.5rem;
+font-size:1.4rem;
 margin-top:20px;
-
 }
-
-
-/* SECCIONES */
 
 section{
-
 max-width:1100px;
 margin:auto;
-padding:80px 25px;
-
+padding:70px 25px;
 }
-
 
 h2{
-
 font-family:'Playfair Display',serif;
-text-align:center;
-font-size:3rem;
 color:#ffd700;
-margin-bottom:40px;
-
+font-size:2.8rem;
+text-align:center;
+margin-bottom:35px;
 }
-
 
 .card{
-
-background:
-linear-gradient(
-145deg,
-#161616,
-#080808
-);
-
-padding:35px;
-
+background:#151515;
+padding:30px;
 border-radius:20px;
-
-box-shadow:
-0 15px 40px black;
-
+box-shadow:0 10px 30px #000;
 line-height:1.8;
-
 font-size:1.1rem;
-
 }
-
-
-/* GALERIA */
 
 .gallery{
-
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-
+gap:20px;
 }
-
 
 .gallery img{
-
 width:100%;
 border-radius:20px;
-
-box-shadow:0 10px 30px black;
-
+box-shadow:0 10px 30px #000;
 }
-
-
-/* REDES */
 
 .social{
-
 text-align:center;
-
 }
-
 
 .social a{
-
 display:inline-flex;
-
 align-items:center;
-
 justify-content:center;
-
-width:55px;
-height:55px;
-
+width:60px;
+height:60px;
 margin:10px;
-
 border-radius:50%;
-
-font-size:25px;
-
-background:#ffd700;
-
-color:#000;
-
+font-size:30px;
 text-decoration:none;
-
+color:white;
 transition:.3s;
-
 }
-
 
 .social a:hover{
-
 transform:scale(1.15);
-
 }
 
+.facebook{
+background:#1877f2;
+}
 
-/* WHATSAPP DESTACADO */
+.tiktok{
+background:#000;
+}
 
+.youtube{
+background:#ff0000;
+}
+
+.threads{
+background:#000;
+}
 
 .whatsapp{
-
-display:inline-block;
-
-margin-top:30px;
-
-background:#25D366;
-
-color:white;
-
-padding:15px 30px;
-
-border-radius:30px;
-
-text-decoration:none;
-
-font-weight:bold;
-
+background:#25d366;
 }
-
-
-
-/* FOOTER */
 
 footer{
-
+background:#000;
 text-align:center;
 padding:30px;
-background:black;
-
 }
-
-
-
-/* MOVIL */
 
 @media(max-width:700px){
 
 .hero h1{
-
 font-size:3rem;
-
 }
-
 
 .hero p{
-
 font-size:1.1rem;
-
 }
-
 
 nav a{
-
 font-size:.85rem;
 margin:5px;
-
 }
 
 }
-
-
 </style>
 
 </head>
 
-
 <body>
 
-
 <nav>
-
 <a href="#inicio">Inicio</a>
 <a href="#biografia">Biografía</a>
 <a href="#galeria">Galería</a>
 <a href="#contacto">Contacto</a>
-
 </nav>
 
 
-
 <div class="hero" id="inicio">
-
 <div>
-
 <h1>José Leal</h1>
-
-<p>
-Cantante colombiano de música popular, ranchera y norteña
-</p>
-
+<p>Cantante colombiano de música popular, ranchera y norteña</p>
 </div>
-
 </div>
-
 
 
 <section id="biografia">
 
 <h2>Biografía</h2>
 
-
 <div class="card">
 
-José Leal es un artista colombiano dedicado a la música popular,
-ranchera y norteña.
+José Leal es un artista colombiano de música popular, ranchera y norteña.
 
-Con una profunda pasión por la música tradicional, busca transmitir
-emociones, historias y sentimientos a través de su voz y sus interpretaciones.
+Con pasión por la música tradicional, transmite historias y emociones a través de su voz y sus interpretaciones.
 
-Su objetivo es conectar con el público y llevar la esencia de la música
-popular colombiana a nuevos escenarios.
+Su propósito es conectar con el público llevando el sentimiento de la música popular colombiana a nuevos escenarios.
 
 </div>
 
-
 </section>
-
-
 
 
 <section id="galeria">
 
 <h2>Galería</h2>
-
 
 <div class="gallery">
 
@@ -334,69 +213,44 @@ popular colombiana a nuevos escenarios.
 
 </div>
 
-
 </section>
-
-
 
 
 <section id="contacto">
 
-
-<h2>Contrataciones</h2>
-
+<h2>Contacto</h2>
 
 <div class="social">
 
-
-<a href="https://www.facebook.com/share/1KTsE6QQYY/" target="_blank">
-<i class="fab fa-facebook"></i>
+<a class="facebook" href="https://www.facebook.com/share/1KTsE6QQYY/" target="_blank">
+<i class="fab fa-facebook-f"></i>
 </a>
 
-
-<a href="https://www.tiktok.com/@joseluisleal5" target="_blank">
+<a class="tiktok" href="https://www.tiktok.com/@joseluisleal5" target="_blank">
 <i class="fab fa-tiktok"></i>
 </a>
 
-
-<a href="https://youtube.com/@joseluiscantante8427" target="_blank">
+<a class="youtube" href="https://youtube.com/@joseluiscantante8427" target="_blank">
 <i class="fab fa-youtube"></i>
 </a>
 
-
-<a href="https://www.threads.com/@josecantante_27" target="_blank">
+<a class="threads" href="https://www.threads.com/@josecantante_27" target="_blank">
 <i class="fa-brands fa-threads"></i>
 </a>
 
-
-<a href="https://wa.me/573114898336" target="_blank">
-<i class="fab fa-whatsapp"></i>
-</a>
-
-
-<br>
 <a class="whatsapp" href="https://wa.me/573114898336" target="_blank">
-
 <i class="fab fa-whatsapp"></i>
-Contratar a José Leal
-
 </a>
-
 
 </div>
-
 
 </section>
 
 
-
 <footer>
-
 © José Leal - Música Popular Colombiana
-
 </footer>
 
 
 </body>
-
 </html>
