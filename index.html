@@ -4,139 +4,236 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>José Leal | Cantante de Música Popular</title>
+<title>José Leal | Música Popular</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 
 *{
-    box-sizing:border-box;
-    scroll-behavior:smooth;
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
 }
 
 body{
-    margin:0;
-    font-family:'Lato',sans-serif;
-    background:#090909;
-    color:white;
+font-family:'Lato',sans-serif;
+background:#050505;
+color:white;
 }
 
-/* HERO */
-
-.hero{
-    min-height:100vh;
-    background:
-    linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.85)),
-    url('images/jose-leal.jpg') center/cover no-repeat;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:30px;
-}
-
-.hero h1{
-    font-family:'Playfair Display',serif;
-    font-size:4rem;
-    margin:0;
-    color:#ffd700;
-    text-shadow:0 5px 20px black;
-}
-
-.hero p{
-    font-size:1.5rem;
-    margin-top:15px;
-}
 
 /* MENU */
 
 nav{
-    position:fixed;
-    top:0;
-    width:100%;
-    background:rgba(0,0,0,.8);
-    padding:15px;
-    text-align:center;
-    z-index:10;
+position:fixed;
+top:0;
+width:100%;
+background:rgba(0,0,0,.85);
+padding:15px;
+text-align:center;
+z-index:100;
 }
 
 nav a{
-    color:#ffd700;
-    text-decoration:none;
-    margin:0 15px;
-    font-weight:bold;
+color:#ffd700;
+margin:0 15px;
+text-decoration:none;
+font-weight:bold;
+}
+
+
+/* PORTADA */
+
+.hero{
+
+height:100vh;
+
+background:
+linear-gradient(
+rgba(0,0,0,.75),
+rgba(0,0,0,.9)
+),
+url('images/Jose-leal.jpg');
+
+background-size:cover;
+background-position:center;
+
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+
+}
+
+
+.hero h1{
+
+font-family:'Playfair Display',serif;
+font-size:5rem;
+color:#ffd700;
+text-shadow:0 0 25px black;
+
+}
+
+
+.hero p{
+
+font-size:1.5rem;
+margin-top:20px;
+
 }
 
 
 /* SECCIONES */
 
 section{
-    max-width:1100px;
-    margin:auto;
-    padding:70px 25px;
+
+max-width:1100px;
+margin:auto;
+padding:80px 25px;
+
 }
+
 
 h2{
-    font-family:'Playfair Display',serif;
-    color:#ffd700;
-    text-align:center;
-    font-size:2.5rem;
+
+font-family:'Playfair Display',serif;
+text-align:center;
+font-size:3rem;
+color:#ffd700;
+margin-bottom:40px;
+
 }
 
 
-/* TARJETAS */
-
 .card{
-    background:#151515;
-    padding:30px;
-    border-radius:15px;
-    box-shadow:0 10px 30px black;
-    margin-top:30px;
-    line-height:1.7;
+
+background:
+linear-gradient(
+145deg,
+#161616,
+#080808
+);
+
+padding:35px;
+
+border-radius:20px;
+
+box-shadow:
+0 15px 40px black;
+
+line-height:1.8;
+
+font-size:1.1rem;
+
 }
 
 
 /* GALERIA */
 
 .gallery{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+
 }
+
 
 .gallery img{
-    width:100%;
-    border-radius:15px;
+
+width:100%;
+border-radius:20px;
+
+box-shadow:0 10px 30px black;
+
 }
 
 
-/* CONTACTO */
+/* REDES */
 
 .social{
-    text-align:center;
+
+text-align:center;
+
 }
 
+
 .social a{
-    display:inline-block;
-    margin:10px;
-    padding:12px 20px;
-    border-radius:8px;
-    background:linear-gradient(45deg,#ffd700,#b8860b);
-    color:black;
-    text-decoration:none;
-    font-weight:bold;
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+width:55px;
+height:55px;
+
+margin:10px;
+
+border-radius:50%;
+
+font-size:25px;
+
+background:#ffd700;
+
+color:#000;
+
+text-decoration:none;
+
+transition:.3s;
+
 }
+
+
+.social a:hover{
+
+transform:scale(1.15);
+
+}
+
+
+/* WHATSAPP DESTACADO */
+
+
+.whatsapp{
+
+display:inline-block;
+
+margin-top:30px;
+
+background:#25D366;
+
+color:white;
+
+padding:15px 30px;
+
+border-radius:30px;
+
+text-decoration:none;
+
+font-weight:bold;
+
+}
+
 
 
 /* FOOTER */
 
 footer{
-    text-align:center;
-    padding:30px;
-    background:#000;
+
+text-align:center;
+padding:30px;
+background:black;
+
 }
+
 
 
 /* MOVIL */
@@ -144,19 +241,28 @@ footer{
 @media(max-width:700px){
 
 .hero h1{
-    font-size:2.8rem;
+
+font-size:3rem;
+
 }
+
 
 .hero p{
-    font-size:1.1rem;
+
+font-size:1.1rem;
+
 }
+
 
 nav a{
-    margin:5px;
-    font-size:.9rem;
+
+font-size:.85rem;
+margin:5px;
+
 }
 
 }
+
 
 </style>
 
@@ -167,14 +273,19 @@ nav a{
 
 
 <nav>
+
 <a href="#inicio">Inicio</a>
 <a href="#biografia">Biografía</a>
 <a href="#galeria">Galería</a>
 <a href="#contacto">Contacto</a>
+
 </nav>
 
 
+
 <div class="hero" id="inicio">
+
+<div>
 
 <h1>José Leal</h1>
 
@@ -184,21 +295,31 @@ Cantante colombiano de música popular, ranchera y norteña
 
 </div>
 
+</div>
+
 
 
 <section id="biografia">
 
 <h2>Biografía</h2>
 
+
 <div class="card">
 
-José Leal es un artista colombiano apasionado por la música popular,
-ranchera y norteña. Su voz y estilo buscan conectar con el público
-a través de canciones llenas de sentimiento y tradición.
+José Leal es un artista colombiano dedicado a la música popular,
+ranchera y norteña.
+
+Con una profunda pasión por la música tradicional, busca transmitir
+emociones, historias y sentimientos a través de su voz y sus interpretaciones.
+
+Su objetivo es conectar con el público y llevar la esencia de la música
+popular colombiana a nuevos escenarios.
 
 </div>
 
+
 </section>
+
 
 
 
@@ -206,11 +327,13 @@ a través de canciones llenas de sentimiento y tradición.
 
 <h2>Galería</h2>
 
+
 <div class="gallery">
 
-<img src="images/jose-leal.jpg" alt="José Leal">
+<img src="images/Jose-leal.jpg" alt="José Leal">
 
 </div>
+
 
 </section>
 
@@ -219,31 +342,49 @@ a través de canciones llenas de sentimiento y tradición.
 
 <section id="contacto">
 
-<h2>Contrataciones y contacto</h2>
+
+<h2>Contrataciones</h2>
+
 
 <div class="social">
 
+
 <a href="https://www.facebook.com/share/1KTsE6QQYY/" target="_blank">
-Facebook
+<i class="fab fa-facebook"></i>
 </a>
+
 
 <a href="https://www.tiktok.com/@joseluisleal5" target="_blank">
-TikTok
+<i class="fab fa-tiktok"></i>
 </a>
+
 
 <a href="https://youtube.com/@joseluiscantante8427" target="_blank">
-YouTube
+<i class="fab fa-youtube"></i>
 </a>
+
 
 <a href="https://www.threads.com/@josecantante_27" target="_blank">
-Threads
+<i class="fa-brands fa-threads"></i>
 </a>
+
 
 <a href="https://wa.me/573114898336" target="_blank">
-WhatsApp
+<i class="fab fa-whatsapp"></i>
 </a>
 
+
+<br>
+<a class="whatsapp" href="https://wa.me/573114898336" target="_blank">
+
+<i class="fab fa-whatsapp"></i>
+Contratar a José Leal
+
+</a>
+
+
 </div>
+
 
 </section>
 
@@ -257,4 +398,5 @@ WhatsApp
 
 
 </body>
+
 </html>
