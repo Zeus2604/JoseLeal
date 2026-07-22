@@ -12,62 +12,26 @@
 <style>
 * { margin:0; padding:0; box-sizing:border-box; scroll-behavior:smooth; }
 
+html, body { width:100%; overflow-x:hidden; }
+
 body { font-family:'Lato',sans-serif; background:#080808; color:white; }
 
 nav {
   position:fixed; top:0; width:100%; background:rgba(0,0,0,.9); padding:15px; text-align:center; z-index:100;
 }
-nav a { color:#ffd700; margin:0 12px; text-decoration:none; font-weight:bold; }
+nav a { color:#d4af37; margin:0 12px; text-decoration:none; font-weight:bold; }
 
-/* HERO — imagen ya integrada (foto + fondo en un solo archivo) */
+/* HERO — solo la foto, pantalla completa */
 .hero {
-  min-height:100vh;
-  background: url('images/hero-bg.jpg') no-repeat center center / cover;
-  display:flex;
-  align-items:center;
+  width:100vw;
+  height:100vh;
+  background: url('images/hero-bg.jpg') no-repeat center center;
+  background-size: cover;
   position:relative;
-}
-
-.hero-content {
-  max-width:1300px;
-  margin:0 auto;
-  width:100%;
-  padding:0 8%;
-  position:relative;
-  z-index:2;
-}
-
-/* Una sola línea: "Música Popular" + "José Leal" flotando sobre la imagen */
-.hero-text h1 {
-  font-family:'Playfair Display',serif;
-  font-weight:700;
-  font-size:3.2rem;
-  color:#ffd700;
-  text-shadow:0 10px 30px #000, 0 2px 8px rgba(0,0,0,.9);
-  line-height:1;
-  white-space:nowrap;
-}
-
-.hero-text h1 .kicker {
-  font-family:'Lato',sans-serif;
-  font-weight:300;
-  font-size:0.5em;
-  letter-spacing:3px;
-  text-transform:uppercase;
-  color:#e0b84a;
-  opacity:.9;
-  margin-right:14px;
-  vertical-align:middle;
 }
 
 @media(max-width:900px) {
-  .hero-content { text-align:center; }
-  .hero-text h1 { font-size:1.6rem; white-space:normal; }
-  .hero-text h1 .kicker { display:block; font-size:0.55em; margin:0 0 10px 0; }
-}
-
-@media(max-width:480px) {
-  .hero-text h1 { font-size:1.3rem; }
+  .hero { background-position: 68% center; }
 }
 
 /* Resto igual */
@@ -93,13 +57,7 @@ footer { background:#000; text-align:center; padding:30px; }
 <a href="#contacto">Contacto</a>
 </nav>
 
-<section class="hero" id="inicio">
-  <div class="hero-content">
-    <div class="hero-text">
-      <h1><span class="kicker">Música Popular</span>José Leal</h1>
-    </div>
-  </div>
-</section>
+<section class="hero" id="inicio"></section>
 
 <section id="biografia">
 <h2>Biografía</h2>
