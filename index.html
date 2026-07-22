@@ -40,10 +40,10 @@ text-decoration:none;
 font-weight:bold;
 }
 
-/* PORTADA MEJORADA - Cutout como Jessi Uribe */
+/* PORTADA MEJORADA - Estilo Jessi Uribe (mezcla natural) */
 .hero{
   min-height:100vh;
-  background: linear-gradient(135deg, #0a0a0a 0%, #1a0f0a 50%, #0a0a0a 100%);
+  background: linear-gradient(to right, #0a0a0a 0%, #1a0f0a 45%, #0a0a0a 100%);
   display:flex;
   align-items:center;
   padding:90px 8%;
@@ -55,7 +55,7 @@ font-weight:bold;
   content:'';
   position:absolute;
   top:0; left:0; right:0; bottom:0;
-  background: radial-gradient(circle at 75% 40%, rgba(220,90,20,0.18), transparent 70%);
+  background: radial-gradient(circle at 75% 45%, rgba(220, 90, 20, 0.25), transparent 65%);
 }
 
 .hero-content{
@@ -75,15 +75,15 @@ font-weight:bold;
 
 .hero-text h1{
   font-family:'Playfair Display',serif;
-  font-size:5.4rem;
+  font-size:5.5rem;
   color:#ffd700;
-  text-shadow:0 8px 30px #000;
+  text-shadow:0 10px 30px #000;
   margin-bottom:15px;
   line-height:1.05;
 }
 
 .hero-text p{
-  font-size:1.7rem;
+  font-size:1.75rem;
   line-height:1.35;
   opacity:0.95;
 }
@@ -96,12 +96,11 @@ font-weight:bold;
 }
 
 .hero-image img{
-  max-height:88vh;
+  max-height:92vh;
   width:auto;
-  max-width:520px;
+  max-width:580px;
   object-fit:contain;
-  filter: drop-shadow(0 40px 60px rgba(0,0,0,0.85));
-  /* Efecto cutout */
+  filter: drop-shadow(0 30px 60px rgba(0,0,0,0.9));
   mix-blend-mode: normal;
 }
 
@@ -119,11 +118,11 @@ font-weight:bold;
     font-size:3.6rem;
   }
   .hero-image img{
-    max-height:58vh;
+    max-height:60vh;
   }
 }
 
-/* El resto sin cambios */
+/* Resto sin cambios */
 section{
 max-width:1100px;
 margin:auto;
