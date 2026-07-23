@@ -29,8 +29,21 @@ nav a {
   letter-spacing:2.5px;
   text-transform:uppercase;
   transition:.3s;
+  position:relative;
 }
 nav a:hover { color:#f0d580; }
+
+/* pequeña línea dorada creciendo debajo del enlace al pasar el mouse */
+nav a::after {
+  content:"";
+  position:absolute;
+  left:50%; bottom:-4px;
+  width:0; height:2px;
+  background:#d4af37;
+  transition:.3s;
+  transform:translateX(-50%);
+}
+nav a:hover::after { width:70%; }
 
 /* HERO — anulamos explícitamente el max-width/padding/margin que hereda de "section" */
 .hero {
@@ -51,6 +64,13 @@ nav a:hover { color:#f0d580; }
   object-fit:cover;
   object-position: center center;
   display:block;
+  opacity:0;
+  animation: heroFadeIn 1.4s ease forwards;
+}
+
+@keyframes heroFadeIn {
+  from { opacity:0; transform:scale(1.03); }
+  to   { opacity:1; transform:scale(1); }
 }
 
 /* Resto */
@@ -116,6 +136,44 @@ h2 {
 .tiktok{background:#000;} .youtube{background:#ff0000;} .threads{background:#000;} .whatsapp{background:#25d366;}
 footer { background:#000; text-align:center; padding:30px; }
 
+/* --- MEJORA 1: Botón flotante de WhatsApp (independiente, no afecta nada más) --- */
+.whatsapp-float {
+  position:fixed;
+  bottom:24px;
+  right:24px;
+  width:62px;
+  height:62px;
+  background:#25d366;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:32px;
+  color:white;
+  text-decoration:none;
+  box-shadow:0 6px 20px rgba(0,0,0,.5);
+  z-index:200;
+  animation: pulse 2.5s infinite;
+}
+.whatsapp-float:hover { transform:scale(1.1); }
+
+@keyframes pulse {
+  0%   { box-shadow:0 6px 20px rgba(0,0,0,.5), 0 0 0 0 rgba(37,211,102,.6); }
+  70%  { box-shadow:0 6px 20px rgba(0,0,0,.5), 0 0 0 14px rgba(37,211,102,0); }
+  100% { box-shadow:0 6px 20px rgba(0,0,0,.5), 0 0 0 0 rgba(37,211,102,0); }
+}
+
+/* --- MEJORA 2: Fade-in de secciones al hacer scroll --- */
+.fade-section {
+  opacity:0;
+  transform:translateY(40px);
+  transition: opacity .8s ease, transform .8s ease;
+}
+.fade-section.visible {
+  opacity:1;
+  transform:translateY(0);
+}
+
 /* Ajustes exclusivos para celular — no afecta computador */
 @media (max-width: 600px) {
   nav {
@@ -129,6 +187,9 @@ footer { background:#000; text-align:center; padding:30px; }
   .hero-photo {
     object-fit: contain;
     object-position: center center;
+  }
+  .whatsapp-float {
+    width:54px; height:54px; font-size:28px; bottom:18px; right:18px;
   }
 }
 </style>
@@ -147,7 +208,7 @@ footer { background:#000; text-align:center; padding:30px; }
   <img src="images/jose-leal.png" alt="José Leal" class="hero-photo">
 </section>
 
-<section id="biografia">
+<section id="biografia" class="fade-section">
 <h2>Biografía</h2>
 <div class="card">
 “Sitio web oficial de José Leal, artista colombiano de música popular, ranchera y norteña. 
@@ -159,7 +220,7 @@ Su propósito es conectar con el público llevando el sentimiento de la música 
 </div>
 </section>
 
-<section id="canciones" class="canciones">
+<section id="canciones" class="canciones fade-section">
 <h2>Canciones</h2>
 <a class="youtube-card" href="https://youtube.com/@joseluiscantante8427" target="_blank">
   <div class="yt-icon"><i class="fab fa-youtube"></i></div>
@@ -168,7 +229,7 @@ Su propósito es conectar con el público llevando el sentimiento de la música 
 </a>
 </section>
 
-<section id="contacto">
+<section id="contacto" class="fade-section">
 <h2>Contacto</h2>
 <div class="social">
 <a class="facebook" href="https://www.facebook.com/share/1KTsE6QQYY/" target="_blank"><i class="fab fa-facebook-f"></i></a>
@@ -183,6 +244,26 @@ Su propósito es conectar con el público llevando el sentimiento de la música 
 <footer>
 © José Leal - Música Popular Colombiana
 </footer>
+
+<!-- Botón flotante de WhatsApp para contrataciones -->
+<a class="whatsapp-float" href="https://wa.me/573114898336?text=Hola%20José%2C%20estoy%20interesado%20en%20información%20de%20contrataciones" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<script>
+// Activa el fade-in de cada sección cuando entra en pantalla al hacer scroll
+document.addEventListener('DOMContentLoaded', function () {
+  const sections = document.querySelectorAll('.fade-section');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.15 });
+  sections.forEach(sec => observer.observe(sec));
+});
+</script>
 
 </body>
 </html>
