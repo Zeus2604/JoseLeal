@@ -6,6 +6,17 @@
 
 <title>José Leal | Música Popular</title>
 
+<meta property="og:title" content="José Leal | Música Popular">
+<meta property="og:description" content="Sitio web oficial de José Leal, artista colombiano de música popular, ranchera y norteña.">
+<meta property="og:image" content="https://joseleal.vercel.app/images/jose-leal.png">
+<meta property="og:url" content="https://joseleal.vercel.app/">
+<meta property="og:type" content="website">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="José Leal | Música Popular">
+<meta name="twitter:description" content="Sitio web oficial de José Leal, artista colombiano de música popular, ranchera y norteña.">
+<meta name="twitter:image" content="https://joseleal.vercel.app/images/jose-leal.png">
+
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Cormorant+Garamond:wght@500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
@@ -33,7 +44,6 @@ nav a {
 }
 nav a:hover { color:#f0d580; }
 
-/* pequeña línea dorada creciendo debajo del enlace al pasar el mouse */
 nav a::after {
   content:"";
   position:absolute;
@@ -45,7 +55,6 @@ nav a::after {
 }
 nav a:hover::after { width:70%; }
 
-/* HERO — anulamos explícitamente el max-width/padding/margin que hereda de "section" */
 .hero {
   width:100%;
   max-width:none;
@@ -73,7 +82,6 @@ nav a:hover::after { width:70%; }
   to   { opacity:1; transform:scale(1); }
 }
 
-/* Resto */
 section { max-width:1100px; margin:auto; padding:70px 25px; }
 
 h2 {
@@ -89,7 +97,6 @@ h2 {
 
 .card { background:#151515; padding:30px; border-radius:20px; box-shadow:0 10px 30px #000; line-height:1.8; font-size:1.1rem; }
 
-/* Sección Canciones */
 .canciones {
   text-align:center;
 }
@@ -136,7 +143,6 @@ h2 {
 .tiktok{background:#000;} .youtube{background:#ff0000;} .threads{background:#000;} .whatsapp{background:#25d366;}
 footer { background:#000; text-align:center; padding:30px; }
 
-/* --- MEJORA 1: Botón flotante de WhatsApp (independiente, no afecta nada más) --- */
 .whatsapp-float {
   position:fixed;
   bottom:24px;
@@ -163,7 +169,6 @@ footer { background:#000; text-align:center; padding:30px; }
   100% { box-shadow:0 6px 20px rgba(0,0,0,.5), 0 0 0 0 rgba(37,211,102,0); }
 }
 
-/* --- MEJORA 2: Fade-in de secciones al hacer scroll --- */
 .fade-section {
   opacity:0;
   transform:translateY(40px);
@@ -174,7 +179,6 @@ footer { background:#000; text-align:center; padding:30px; }
   transform:translateY(0);
 }
 
-/* Ajustes exclusivos para celular — no afecta computador */
 @media (max-width: 600px) {
   nav {
     padding: 12px 6px;
@@ -245,13 +249,11 @@ Su propósito es conectar con el público llevando el sentimiento de la música 
 © José Leal - Música Popular Colombiana
 </footer>
 
-<!-- Botón flotante de WhatsApp para contrataciones -->
 <a class="whatsapp-float" href="https://wa.me/573114898336?text=Hola%20José%2C%20estoy%20interesado%20en%20información%20de%20contrataciones" target="_blank">
   <i class="fab fa-whatsapp"></i>
 </a>
 
 <script>
-// Activa el fade-in de cada sección cuando entra en pantalla al hacer scroll
 document.addEventListener('DOMContentLoaded', function () {
   const sections = document.querySelectorAll('.fade-section');
   const observer = new IntersectionObserver((entries) => {
